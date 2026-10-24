@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoShop - Tienda de Tecnología</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo-minimal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                        <rect x="9" y="9" width="6" height="6"></rect>
+                        <line x1="9" y1="1" x2="9" y2="4"></line>
+                        <line x1="15" y1="1" x2="15" y2="4"></line>
+                        <line x1="9" y1="20" x2="9" y2="23"></line>
+                        <line x1="15" y1="20" x2="15" y2="23"></line>
+                        <line x1="20" y1="9" x2="23" y2="9"></line>
+                        <line x1="20" y1="15" x2="23" y2="15"></line>
+                        <line x1="1" y1="9" x2="4" y2="9"></line>
+                        <line x1="1" y1="15" x2="4" y2="15"></line>
+                    </svg>
+                </div>
+            </div>
+
+            <h1>TecnoShop</h1>
+            <p class="eslogan">La mejor tecnología al alcance de tu mano</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#carrito-seccion">Carrito</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="inicio">
+
+        <section id="productos">
+            <h2>Productos Destacados</h2>
+
+            <div class="grid-productos">
+                <article>
+                    <h3>Smartphone Pro</h3>
+                    <p class="precio">$850.000</p>
+                    <p>Pantalla AMOLED de 120Hz, cámara triple de 108MP y batería de larga duración.</p>
+                    <button type="button" class="btn-comprar btn-agregar" data-nombre="Smartphone Pro" data-precio="850000">Agregar al Carrito</button>
+                </article>
+
+                <article>
+                    <h3>Notebook Ultra</h3>
+                    <p class="precio">$1.450.000</p>
+                    <p>Procesador de última generación, 16GB RAM y SSD de 512GB para alto rendimiento.</p>
+                    <button type="button" class="btn-comprar btn-agregar" data-nombre="Notebook Ultra" data-precio="1450000">Agregar al Carrito</button>
+                </article>
+
+                <article>
+                    <h3>Auriculares Wireless</h3>
+                    <p class="precio">$120.000</p>
+                    <p>Cancelación activa de ruido, sonido HD inalámbrico y 30hs de batería.</p>
+                    <button type="button" class="btn-comprar btn-agregar" data-nombre="Auriculares Wireless" data-precio="120000">Agregar al Carrito</button>
+                </article>
+
+                <article>
+                    <h3>Teclado Mecánico</h3>
+                    <p class="precio">$95.000</p>
+                    <p>Switches de alta precisión, iluminación RGB personalizable y estructura de aluminio.</p>
+                    <button type="button" class="btn-comprar btn-agregar" data-nombre="Teclado Mecánico" data-precio="95000">Agregar al Carrito</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="ofertas">
+            <h2>Ofertas del Día</h2>
+            <div class="oferta-card">
+                <h3>¡Combo Tech Inalámbrico!</h3>
+                <p>Llevate un Mouse Gamer + Mousepad XL con 25% de descuento y envío gratis a todo el país.</p>
+                <p class="precio-oferta">Antes: $75.000 — <strong>Ahora: $56.250</strong></p>
+                <button type="button" class="btn-comprar btn-agregar" data-nombre="Combo Tech Inalámbrico" data-precio="56250">Aprovechar Oferta</button>
+            </div>
+        </section>
+
+        <section id="carrito-seccion">
+            <h2>Tu Carrito de Compras</h2>
+            <p class="subtitulo-seccion" style="text-align: center; margin-bottom: 25px; color: #94a3b8;">Revisá tus productos seleccionados antes de avanzar:</p>
+
+            <div class="resumen-carrito" id="resumen-carrito">
+                <p style="text-align: center; color: #94a3b8;">Tu carrito está vacío actualmente.</p>
+            </div>
+
+            <div class="visor-precio" style="margin-top: 20px;">
+                <p>Total a Pagar: <strong>$<span id="total-carrito">0</span></strong></p>
+            </div>
+
+            <div style="text-align: center; margin-top: 25px;">
+                <button type="button" class="btn-comprar" id="btnMostrarCheckout" onclick="mostrarFormulario()" style="padding: 14px 30px; font-size: 1rem; cursor: pointer;">Finalizar Compra</button>
+            </div>
+
+            <div id="contenedor-checkout" style="display: none; margin-top: 35px; border-top: 2px solid #334155; padding-top: 25px;">
+                <h3 style="text-align: center; color: #ffffff; margin-bottom: 20px; font-size: 1.4rem;">Completá tus Datos</h3>
+
+                <form id="formCheckout" onsubmit="return procesarCompra(event)">
+                    <div class="form-grupo">
+                        <label for="cliente-nombre">Nombre y Apellido:</label>
+                        <input type="text" id="cliente-nombre" placeholder="Tu nombre completo">
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="cliente-email">Correo Electrónico:</label>
+                        <input type="email" id="cliente-email" placeholder="correo@ejemplo.com">
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="cliente-envio">Dirección de Envío:</label>
+                        <input type="text" id="cliente-envio" placeholder="Calle, número y ciudad">
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="metodo-pago">Método de Pago:</label>
+                        <select id="metodo-pago">
+                            <option value="">-- Seleccionar método de pago --</option>
+                            <option value="tarjeta">Tarjeta de Crédito / Débito</option>
+                            <option value="mercadopago">Mercado Pago</option>
+                            <option value="transferencia">Transferencia Bancaria (10% OFF)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-comprar" style="width: 100%; text-align: center; border: none; cursor: pointer; padding: 14px; font-size: 1rem;">Confirmar Pedido</button>
+                </form>
+            </div>
+
+            <p id="mensajeAlerta" style="margin-top: 15px; text-align: center; font-weight: 600;"></p>
+        </section>
+
+    </main>
+
+    <footer id="contacto">
+        <p><strong>Ubicación:</strong> Av. Belgrano 350, Alta Gracia, Córdoba</p>
+        <p><strong>Horarios de Atención:</strong> Lunes a Viernes de 09:00 a 19:00 hs | Sábados de 09:00 a 13:00 hs</p>
+        <p><strong>Contacto:</strong> contacto@tecnoshop.com.ar | Tel: 0810-555-TECH</p>
+        <p class="copyright">&copy; 2026 TecnoShop - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit - Gimnasio & Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo-minimal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6.5 6.5h11"></path>
+                        <path d="M6.5 17.5h11"></path>
+                        <path d="M6 3v18"></path>
+                        <path d="M18 3v18"></path>
+                        <path d="M3 8v8"></path>
+                        <path d="M21 8v8"></path>
+                    </svg>
+                </div>
+            </div>
+            <h1>PowerFit</h1>
+            <p class="eslogan">Superá tus límites cada día</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#clases">Clases</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#entrenadores">Entrenadores</a></li>
+                <li><a href="#inscripcion">Inscripción</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="inicio">
+        <section id="clases">
+            <h2>Clases Disponibles</h2>
+            <div class="grid-clases">
+                <article>
+                    <h3>Musculación</h3>
+                    <p class="categoria">Fuerza & Hipertrofia</p>
+                    <p>Equipamiento de última generación y rutinas personalizadas adaptadas a tus objetivos de fuerza y acondicionamiento.</p>
+                    <p class="precio-base">Desde $22.000 / mes</p>
+                </article>
+                <article>
+                    <h3>CrossFit</h3>
+                    <p class="categoria">Alta Intensidad</p>
+                    <p>Entrenamiento funcional de alta intensidad diseñado para mejorar tu resistencia física, agilidad y potencia.</p>
+                    <p class="precio-base">Desde $26.000 / mes</p>
+                </article>
+                <article>
+                    <h3>Yoga</h3>
+                    <p class="categoria">Flexibilidad & Mente</p>
+                    <p>Sesiones enfocadas en la movilidad articular, flexibilidad, control de la respiración y reducción del estrés.</p>
+                    <p class="precio-base">Desde $18.000 / mes</p>
+                </article>
+            </div>
+        </section>
+        <section id="horarios">
+            <h2>Horarios de Atención</h2>
+            <div class="tabla-horarios">
+                <div class="horario-card">
+                    <h4>Lunes a Viernes</h4>
+                    <p>06:00 hs — 22:30 hs</p>
+                </div>
+                <div class="horario-card">
+                    <h4>Sábados</h4>
+                    <p>08:00 hs — 18:00 hs</p>
+                </div>
+                <div class="horario-card">
+                    <h4>Domingos y Feriados</h4>
+                    <p>09:00 hs — 13:00 hs</p>
+                </div>
+            </div>
+        </section>
+        <section id="entrenadores">
+            <h2>Nuestro Staff de Entrenadores</h2>
+            <p class="subtitulo-seccion">Profesionales capacitados para guiarte en cada paso de tu evolución física:</p>
+            <div class="grid-clases">
+                <article>
+                    <h3>Lucas Gómez</h3>
+                    <p class="categoria">Especialista en Musculación</p>
+                    <p>Profesor de Educación Física con más de 8 años optimizando técnicas de hipertrofia y fuerza máxima.</p>
+                </article>
+                <article>
+                    <h3>Sofía Martínez</h3>
+                    <p class="categoria">Coach de CrossFit</p>
+                    <p>Atleta de alta competencia y entrenadora funcional enfocada en la resistencia y la superación personal.</p>
+                </article>
+                <article>
+                    <h3>Matías Rossi</h3>
+                    <p class="categoria">Instructor de Fitness</p>
+                    <p>Especialista en acondicionamiento cardiovascular, circuitos dinámicos y rendimiento físico general.</p>
+                </article>
+            </div>
+        </section>
+        <section id="inscripcion">
+            <h2>Inscripción & Membresía</h2>
+            <p class="subtitulo-seccion">Elegí tu actividad y calculá el costo estimado de tu plan:</p>
+            <form id="formInscripcion" onsubmit="return procesarInscripcion(event)">
+                <div class="form-grupo">
+                    <label for="socio-nombre">Nombre y Apellido:</label>
+                    <input type="text" id="socio-nombre" placeholder="Ingresá tu nombre completo">
+                </div>
+                <div class="form-grupo">
+                    <label for="socio-telefono">Teléfono / Celular:</label>
+                    <input type="tel" id="socio-telefono" placeholder="Ej: 3547 123456">
+                </div>
+                <div class="form-grupo">
+                    <label for="actividad">Seleccioná la Actividad:</label>
+                    <select id="actividad" onchange="calcularCuota()">
+                        <option value="">-- Seleccionar Actividad --</option>
+                        <option value="musculacion">Musculación ($22.000/mes)</option>
+                        <option value="crossfit">CrossFit ($26.000/mes)</option>
+                        <option value="yoga">Yoga ($18.000/mes)</option>
+                        <option value="pase-libre">Pase Libre Total ($32.000/mes)</option>
+                    </select>
+                </div>
+                <div class="form-grupo">
+                    <label for="plan">Plan de Membresía:</label>
+                    <select id="plan" onchange="calcularCuota()">
+                        <option value="mensual">Mensual (Precio Regular)</option>
+                        <option value="trimestral">Trimestral (10% de Descuento)</option>
+                        <option value="anual">Anual (20% de Descuento)</option>
+                    </select>
+                </div>
+                <div class="visor-precio">
+                    <p>Total Estimado: <strong>$<span id="monto-total">0</span></strong></p>
+                </div>
+                <button type="submit" class="btn-enviar">Solicitar Inscripción</button>
+            </form>
+            <p id="mensajeAlerta"></p>
+        </section>
+    </main>
+    <footer id="contacto">
+        <h2>Contacto PowerFit</h2>
+        <p><strong>Teléfono:</strong> 3547-490000</p>
+        <p><strong>Dirección:</strong> Av. Belgrano 1200, Alta Gracia</p>
+        <p><strong>Instagram:</strong> @powerfit.ag</p>
+        <p class="copyright">&copy; 2026 PowerFit Gym - Todos los derechos reservados</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

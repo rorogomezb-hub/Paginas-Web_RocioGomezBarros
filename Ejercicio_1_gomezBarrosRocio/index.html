@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café con Aroma - Cafetería</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo-minimal">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                    <line x1="6" y1="1" x2="6" y2="4"></line>
+                    <line x1="10" y1="1" x2="10" y2="4"></line>
+                    <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+            </div>
+        </div>
+        
+        <h1>Café con Aroma</h1>
+        <p class="eslogan">El punto de encuentro para tus mejores momentos</p>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#carta">Carta</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="inicio">
+
+        <section id="nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>
+                Bienvenidos a Café con Aroma. Un espacio cálido y acogedor pensado para disfrutar de granos seleccionados, pastelería artesanal y momentos únicos cada día.
+            </p>
+        </section>
+
+        <section id="menu">
+            <h2>Menú Destacado</h2>
+            <div class="grid-menu">
+                <article>
+                    <h3>Café</h3>
+                    <p class="precio">$4.000</p>
+                    <p>Café de especialidad preparado con granos recién molidos.</p>
+                    <button class="btn-agregar" onclick="agregarAlCarro('Café', 4000)">Agregar al Carrito</button>
+                </article>
+
+                <article>
+                    <h3>Capuccino</h3>
+                    <p class="precio">$6.800</p>
+                    <p>Espresso con leche texturizada, espuma cremosa y toque de cacao.</p>
+                    <button class="btn-agregar" onclick="agregarAlCarro('Capuccino', 6800)">Agregar al Carrito</button>
+                </article>
+
+                <article>
+                    <h3>Medialunas</h3>
+                    <p class="precio">$2.600</p>
+                    <p>Deliciosas medialunas de manteca artesanales y recién horneadas.</p>
+                    <button class="btn-agregar" onclick="agregarAlCarro('Medialunas', 2600)">Agregar al Carrito</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="carta">
+            <h2>Nuestra Carta Completa</h2>
+            <p class="subtitulo-seccion" style="margin-bottom: 20px; font-size: 0.95rem; color: #8d6e63;">Pasá el cursor sobre cada producto para ver su descripción y añadilo directamente:</p>
+
+            <div class="menu-container-carta">
+                
+                <div class="menu-categoria">
+                    <h3 style="font-family: 'Syne', sans-serif; font-size: 1.2rem; margin-bottom: 12px; color: #2c1e1a; border-bottom: 2px solid #efebe9; padding-bottom: 6px;">Cafetería de Especialidad</h3>
+
+                    <div class="menu-item-hover">
+                        <div class="menu-info-hover">
+                            <span class="nombre">Café Espresso</span>
+                            <span class="precio">$3.500</span>
+                        </div>
+                        <p class="descripcion-hover">Doble extracción de granos seleccionados, notas intensas y cuerpo equilibrado.</p>
+                        <button class="btn-agregar-carta" onclick="agregarAlCarro('Café Espresso', 3500)">Agregar al Carrito</button>
+                    </div>
+
+                    <div class="menu-item-hover">
+                        <div class="menu-info-hover">
+                            <span class="nombre">Café Americano</span>
+                            <span class="precio">$3.800</span>
+                        </div>
+                        <p class="descripcion-hover">Shot de espresso diluido en agua caliente, suave y aromático para disfrutar más tiempo.</p>
+                        <button class="btn-agregar-carta" onclick="agregarAlCarro('Café Americano', 3800)">Agregar al Carrito</button>
+                    </div>
+
+                    <div class="menu-item-hover">
+                        <div class="menu-info-hover">
+                            <span class="nombre">Latte Vainilla</span>
+                            <span class="precio">$5.200</span>
+                        </div>
+                        <p class="descripcion-hover">Suave combinación de espresso, abundante leche cremosa y almíbar artesanal de vainilla.</p>
+                        <button class="btn-agregar-carta" onclick="agregarAlCarro('Latte Vainilla', 5200)">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="menu-categoria" style="margin-top: 20px;">
+                    <h3 style="font-family: 'Syne', sans-serif; font-size: 1.2rem; margin-bottom: 12px; color: #2c1e1a; border-bottom: 2px solid #efebe9; padding-bottom: 6px;">Pastelería Artesanal</h3>
+
+                    <div class="menu-item-hover">
+                        <div class="menu-info-hover">
+                            <span class="nombre">Torta Húmeda de Chocolate</span>
+                            <span class="precio">$6.000</span>
+                        </div>
+                        <p class="descripcion-hover">Bizcochuelo intenso de cacao amargo con relleno y cobertura de ganache semiamarga.</p>
+                        <button class="btn-agregar-carta" onclick="agregarAlCarro('Torta Húmeda de Chocolate', 6000)">Agregar al Carrito</button>
+                    </div>
+
+                    <div class="menu-item-hover">
+                        <div class="menu-info-hover">
+                            <span class="nombre">Cheesecake de Frutos Rojos</span>
+                            <span class="precio">$6.500</span>
+                        </div>
+                        <p class="descripcion-hover">Base crocante de galleta, crema suave de queso y reducción casera de frutos rojos.</p>
+                        <button class="btn-agregar-carta" onclick="agregarAlCarro('Cheesecake de Frutos Rojos', 6500)">Agregar al Carrito</button>
+                    </div>
+
+                    <div class="menu-item-hover">
+                        <div class="menu-info-hover">
+                            <span class="nombre">Budín de Limón y Arándanos</span>
+                            <span class="precio">$4.000</span>
+                        </div>
+                        <p class="descripcion-hover">Esponjoso budín casero con glaseado cítrico y arándanos frescos de estación.</p>
+                        <button class="btn-agregar-carta" onclick="agregarAlCarro('Budín de Limón y Arándanos', 4000)">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="carrito-seccion">
+            <h2>🛒 Tu Carrito de Compras</h2>
+            <ul id="lista-carrito">
+                <li class="carrito-vacio">El carrito está vacío.</li>
+            </ul>
+            <div class="carrito-total">
+                <p><strong>Total: $<span id="total-precio">0</span></strong></p>
+                <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
+            </div>
+            <button id="btn-finalizar" class="btn-accion-principal" onclick="mostrarCheckout()" style="display: none;">Finalizar Pedido</button>
+        </section>
+
+        <section id="checkout-seccion" style="display: none;">
+            <h2>📋 Datos del Pedido</h2>
+            <form id="formCheckout" onsubmit="return procesarPedido(event)">
+                <div class="form-grupo">
+                    <label for="cliente-nombre">Nombre y Apellido:</label>
+                    <input type="text" id="cliente-nombre" required placeholder="Tu nombre completo">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="cliente-telefono">Teléfono / Celular:</label>
+                    <input type="tel" id="cliente-telefono" required placeholder="3547...">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="modalidad">Modalidad de Entrega:</label>
+                    <select id="modalidad" required>
+                        <option value="">Seleccioná una opción</option>
+                        <option value="local">Consumir en el local</option>
+                        <option value="delivery">Delivery a domicilio</option>
+                    </select>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="pago">Método de Pago:</label>
+                    <select id="pago" required>
+                        <option value="">Seleccioná un medio de pago</option>
+                        <option value="efectivo">Efectivo</option>
+                        <option value="transferencia">Transferencia bancaria</option>
+                        <option value="tarjeta">Tarjeta de Débito / Crédito</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-enviar">Confirmar Pedido</button>
+            </form>
+            <p id="mensajeExitoPedido"></p>
+        </section>
+
+    </main>
+
+    <footer id="contacto">
+        <h2>Contacto</h2>
+        <p><strong>Dirección:</strong> Av. San Martín 450, Alta Gracia</p>
+        <p><strong>Email:</strong> contacto@cafeconaroma.com</p>
+        <p><strong>Teléfono:</strong> 3547-400000</p>
+        <p class="copyright">&copy; 2026 Café con Aroma - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
